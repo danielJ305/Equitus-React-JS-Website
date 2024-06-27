@@ -17,11 +17,24 @@ module.exports = {
       {
         test: /\.css$/,
         use: ['style-loader', 'css-loader']
-      }
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          'style-loader', // Injects styles into the DOM
+          'css-loader',   // Translates CSS into CommonJS
+          'sass-loader',  // Compiles Sass to CSS
+        ],
+      },
     ]
   },
   resolve: {
-    extensions: ['.js', '.jsx']
+    extensions: ['.js', '.jsx', '.scss'],
+    alias: {
+      '@': path.resolve(__dirname, 'src'),
+      '@assets': path.resolve(__dirname, 'src/assets'),
+      '@components': path.resolve(__dirname, 'src/components')
+    }
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -33,6 +46,7 @@ module.exports = {
       directory: path.join(__dirname, 'dist'),
     },
     compress: true,
-    port: 9000
+    port: 9000,
+    historyApiFallback: true
   }
 };
