@@ -1,10 +1,10 @@
 import React from 'react';
-import navToggle from '../assets/navToggle.js';
+import NavToggle from '../assets/NavToggle.js';
 
-const navBar = () => (
+const NavBar = () => (
   <div>
-    <navToggle />
+    <NavToggle />
   </div>
 );
 
-export default navBar;
+export default NavBar;
