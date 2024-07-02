@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@gsap/react": "^2.1.1",
     "express": "^4.19.2",
     "gsap": "^3.12.5",
     "hamburger-react": "^2.5.1",
